@@ -10,7 +10,11 @@
         <?php
         function sort_2way(&$array, $order = true) {
             usort($array, function($a, $b) use ($order) {
-                return $order ? ($a <=> $b) : ($b <=> $a);
+                if ($order) {
+                    return $a <=> $b; // 昇順
+                } else {
+                    return $b <=> #a; // 降順
+                }
             });
         }
         ?>
