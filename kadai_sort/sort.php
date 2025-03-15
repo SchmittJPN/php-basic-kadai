@@ -13,7 +13,7 @@
                 if ($order) {
                     return $a <=> $b; // 昇順
                 } else {
-                    return $b <=> #a; // 降順
+                    return $b <=> $a; // 降順
                 }
             });
         }
