@@ -8,14 +8,12 @@
 <body>
     <p>
         <?php
-        function sort_2way(&$array, $order = true) {
-            usort($array, function($a, $b) use ($order) {
-                if ($order) {
-                    return $a <=> $b; // 昇順
-                } else {
-                    return $b <=> $a; // 降順
-                }
-            });
+        function sort_2way(&$array, $order) {
+            if ($order) {
+                sort($array);
+            } else {
+                rsort($array);
+            }
         }
         ?>
     </p>
@@ -36,5 +34,3 @@
     </p>
 </body>
 </html>
-        
-        
